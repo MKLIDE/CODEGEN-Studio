@@ -1,4 +1,4 @@
-﻿package com.codegen.engine;
+package com.codegen.engine;
 
 import com.codegen.model.Template;
 import org.apache.velocity.*;

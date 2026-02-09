@@ -1,4 +1,4 @@
-﻿package com.codegen.config;
+package com.codegen.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

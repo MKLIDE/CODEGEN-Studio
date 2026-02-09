@@ -1,4 +1,4 @@
-﻿package com.codegen.repository;
+package com.codegen.repository;
 
 import com.codegen.model.Template;
 import org.springframework.data.jpa.repository.JpaRepository;

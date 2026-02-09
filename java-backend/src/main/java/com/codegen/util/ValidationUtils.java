@@ -1,4 +1,4 @@
-﻿package com.codegen.util;
+package com.codegen.util;
 
 import org.springframework.stereotype.Component;
 

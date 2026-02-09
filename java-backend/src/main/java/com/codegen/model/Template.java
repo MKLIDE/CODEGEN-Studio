@@ -1,4 +1,4 @@
-﻿package com.codegen.model;
+package com.codegen.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

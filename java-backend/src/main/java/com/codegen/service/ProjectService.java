@@ -1,4 +1,4 @@
-﻿package com.codegen.service;
+package com.codegen.service;
 
 import com.codegen.model.Project;
 import com.codegen.repository.ProjectRepository;
