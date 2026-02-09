@@ -1,0 +1,113 @@
+﻿name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [published]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, windows-latest, macos-latest]
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    - name: Setup Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+    
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo
+          ~/.m2
+          node_modules
+        key: \-deps-\
+    
+    - name: Install dependencies
+      run: |
+        cd frontend && npm ci
+        cd ../java-backend && mvn dependency:resolve
+        cd ../src-tauri && cargo fetch
+    
+    - name: Run tests
+      run: |
+        cd frontend && npm test
+        cd ../java-backend && mvn test
+        cd ../src-tauri && cargo test
+    
+  build:
+    needs: test
+    runs-on: \
+    
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, windows-latest, macos-latest]
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup build environment
+      run: |
+        if [ "\" == "ubuntu-latest" ]; then
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.0-dev libssl-dev
+        fi
+    
+    - name: Build application
+      run: |
+        cd frontend && npm run build
+        cd ../java-backend && mvn clean package -DskipTests
+        cd ../src-tauri && cargo tauri build
+    
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: codegen-studio-\
+        path: |
+          src-tauri/target/release/codegen-studio
+          src-tauri/target/release/*.exe
+          src-tauri/target/release/*.app
+          src-tauri/target/release/*.deb
+    
+  release:
+    needs: build
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+    
+    - name: Create release assets
+      run: |
+        mkdir -p release-assets
+        # Package for each platform
+        # ... packaging commands
+    
+    - name: Upload release assets
+      uses: softprops/action-gh-release@v1
+      with:
+        files: release-assets/*

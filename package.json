@@ -1,0 +1,49 @@
+﻿{
+    "name":  "codegen-vision1",
+    "private":  true,
+    "version":  "0.1.0",
+    "type":  "module",
+    "scripts":  {
+                    "dev":  "concurrently \"cd frontend \u0026\u0026 npm run dev\" \"cd src-tauri \u0026\u0026 cargo tauri dev\"",
+                    "build":  "turbo run build",
+                    "build:frontend":  "cd frontend \u0026\u0026 npm run build",
+                    "build:tauri":  "cd src-tauri \u0026\u0026 cargo tauri build",
+                    "build:java":  "cd java-backend \u0026\u0026 mvn clean package -DskipTests",
+                    "package":  "cd src-tauri \u0026\u0026 cargo tauri build --bundles app,dmg,deb,rpm,msi,nsis,appimage",
+                    "test":  "turbo run test",
+                    "test:frontend":  "cd frontend \u0026\u0026 npm test",
+                    "test:rust":  "cd src-tauri \u0026\u0026 cargo test",
+                    "test:java":  "cd java-backend \u0026\u0026 mvn test",
+                    "test:e2e":  "cd tests \u0026\u0026 npm run test:e2e",
+                    "lint":  "turbo run lint",
+                    "lint:fix":  "turbo run lint:fix",
+                    "clean":  "turbo run clean \u0026\u0026 rm -rf node_modules target dist",
+                    "download-models":  "cd scripts \u0026\u0026 ./download-models.ps1",
+                    "setup":  "./scripts/setup-java.ps1 \u0026\u0026 npm install",
+                    "doctor":  "node -e \"console.log(\u0027Checking system...\u0027); const { execSync } = require(\u0027child_process\u0027); try { execSync(\u0027rustc --version\u0027); console.log(\u0027✓ Rust installed\u0027); } catch { console.log(\u0027✗ Rust missing\u0027); }\"",
+                    "format":  "turbo run format",
+                    "format:check":  "turbo run format:check",
+                    "type-check":  "turbo run type-check",
+                    "security-check":  "cargo audit \u0026\u0026 npm audit",
+                    "coverage":  "turbo run coverage",
+                    "preview":  "vite preview --port 4173",
+                    "storybook":  "cd frontend \u0026\u0026 npm run storybook",
+                    "docker:build":  "docker build -t codegen-studio .",
+                    "docker:run":  "docker run -p 1420:1420 codegen-studio"
+                },
+    "devDependencies":  {
+                            "concurrently":  "^8.2.0",
+                            "turbo":  "^1.10.0",
+                            "@types/node":  "^20.0.0",
+                            "typescript":  "^5.0.0"
+                        },
+    "packageManager":  "npm@10.2.0",
+    "workspaces":  [
+                       "frontend",
+                       "tests/e2e"
+                   ],
+    "engines":  {
+                    "node":  "\u003e=18.0.0",
+                    "npm":  "\u003e=10.0.0"
+                }
+}

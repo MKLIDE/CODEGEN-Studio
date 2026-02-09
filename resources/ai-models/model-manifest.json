@@ -1,0 +1,29 @@
+﻿{
+  "models": [
+    {
+      "name": "codellama-7b-q4",
+      "filename": "codellama-7b-q4.gguf",
+      "description": "CodeLlama 7B quantized model for code completion",
+      "size": "4.8GB",
+      "url": "https://huggingface.co/TheBloke/CodeLlama-7B-GGUF/resolve/main/codellama-7b.Q4_K_M.gguf",
+      "format": "gguf",
+      "quantization": "Q4_K_M",
+      "contextSize": 4096,
+      "parameters": 7000000000,
+      "languages": ["javascript", "typescript", "python", "java", "rust", "go", "cpp"]
+    },
+    {
+      "name": "starcoder2-3b-q4",
+      "filename": "starcoder2-3b-q4.gguf",
+      "description": "StarCoder2 3B quantized model for fast suggestions",
+      "size": "2.1GB",
+      "url": "https://huggingface.co/bartowski/StarCoder2-3B-GGUF/resolve/main/starcoder2-3b.Q4_K_M.gguf",
+      "format": "gguf",
+      "quantization": "Q4_K_M",
+      "contextSize": 8192,
+      "parameters": 3000000000,
+      "languages": ["python", "javascript", "java", "go", "rust"]
+    }
+  ],
+  "lastUpdated": "2024-01-01"
+}

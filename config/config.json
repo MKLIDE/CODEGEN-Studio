@@ -1,0 +1,39 @@
+﻿{
+  "app": {
+    "name": "CodeGen Studio",
+    "version": "0.1.0",
+    "environment": "development"
+  },
+  "java": {
+    "enabled": true,
+    "port": 7070,
+    "debugPort": 5005,
+    "jvmArgs": "-Xmx2G -XX:+UseG1GC -Djava.awt.headless=true"
+  },
+  "ai": {
+    "enabled": false,
+    "modelPath": "./resources/ai-models/codellama-7b-q4.gguf",
+    "contextSize": 4096,
+    "threads": 4,
+    "maxTokens": 512,
+    "temperature": 0.1
+  },
+  "privacy": {
+    "networkBlocking": true,
+    "telemetry": false,
+    "autoUpdates": false,
+    "encryptionEnabled": true
+  },
+  "paths": {
+    "templates": "./java-backend/src/main/resources/templates",
+    "projects": "./projects",
+    "data": "./data",
+    "logs": "./logs"
+  },
+  "ui": {
+    "theme": "dark",
+    "editorFontSize": 14,
+    "editorTabSize": 2,
+    "editorWordWrap": true
+  }
+}

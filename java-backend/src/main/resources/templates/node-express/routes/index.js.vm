@@ -1,0 +1,32 @@
+﻿const express = require('express');
+const router = express.Router();
+
+// Home route
+router.get('/', (req, res) => {
+  res.json({
+    message: 'Welcome to {{projectName}} API',
+    version: '1.0.0',
+    generatedWith: 'CodeGen Studio',
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Health check route
+router.get('/health', (req, res) => {
+  res.json({
+    status: 'healthy',
+    service: '{{projectName}}',
+    uptime: process.uptime()
+  });
+});
+
+// Example API route
+router.get('/api/data', (req, res) => {
+  res.json({
+    data: ['item1', 'item2', 'item3'],
+    count: 3,
+    generated: new Date().toISOString()
+  });
+});
+
+module.exports = router;

@@ -1,0 +1,114 @@
+﻿{
+  "build": {
+    "beforeDevCommand": "cd ../frontend && npm run dev",
+    "beforeBuildCommand": "cd ../frontend && npm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../frontend/dist",
+    "withGlobalTauri": false
+  },
+  "package": {
+    "productName": "CodeGen Studio",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true,
+        "execute": true
+      },
+      "dialog": {
+        "all": false,
+        "open": true,
+        "save": true,
+        "message": true,
+        "ask": true,
+        "confirm": true
+      },
+      "fs": {
+        "all": true,
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "copyFile": true,
+        "createDir": true,
+        "removeDir": true,
+        "removeFile": true,
+        "renameFile": true,
+        "exists": true,
+        "scope": ["/**", "C:\Users\neo/**", "**/*"]
+      },
+      "path": {
+        "all": true
+      },
+      "process": {
+        "all": false,
+        "exit": true,
+        "restart": true,
+        "relaunch": true
+      },
+      "os": {
+        "all": false,
+        "platform": true,
+        "version": true,
+        "type": true,
+        "locale": true,
+        "hostname": true
+      },
+      "notification": {
+        "all": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "studio.codegen.app",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "resources": [
+        "../resources/jvm",
+        "../resources/ai-models",
+        "../resources/binaries",
+        "../java-backend/target/codegen-backend.jar",
+        "../config"
+      ],
+      "externalBin": [],
+      "copyright": "© 2024 CodeGen Studio. All rights reserved.",
+      "category": "DeveloperTool",
+      "shortDescription": "Privacy-first development studio",
+      "longDescription": "A local-first development environment with AI assistance that never sends your code to the cloud.",
+      "deb": {
+        "depends": ["libwebkit2gtk-4.0-dev", "libssl-dev"]
+      },
+      "macOS": {
+        "frameworks": [],
+        "minimumSystemVersion": "10.13",
+        "signingIdentity": null,
+        "entitlements": null
+      },
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "",
+        "webviewInstallMode": {
+          "type": "downloadBootstrapper"
+        }
+      }
+    },
+    "security": {
+      "csp": "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' ws://localhost:* http://localhost:*;"
+    },
+    "updater": {
+      "active": false,
+      "endpoints": [],
+      "dialog": true,
+      "pubkey": ""
+    }
+  }
+}

@@ -1,0 +1,49 @@
+﻿{
+  "templates": [
+    {
+      "id": "react-ts",
+      "name": "React + TypeScript",
+      "description": "Modern React application with TypeScript, Vite, and Tailwind CSS",
+      "language": "typescript",
+      "framework": "react",
+      "tags": ["frontend", "react", "typescript", "vite"],
+      "difficulty": "beginner"
+    },
+    {
+      "id": "node-express",
+      "name": "Node.js + Express",
+      "description": "REST API backend with Express.js and MongoDB support",
+      "language": "javascript",
+      "framework": "node",
+      "tags": ["backend", "node", "express", "api"],
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "spring-boot",
+      "name": "Spring Boot",
+      "description": "Java Spring Boot REST API with PostgreSQL database",
+      "language": "java",
+      "framework": "spring",
+      "tags": ["backend", "java", "spring", "rest"],
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "react-native",
+      "name": "React Native",
+      "description": "Cross-platform mobile app with Expo framework",
+      "language": "javascript",
+      "framework": "react-native",
+      "tags": ["mobile", "react", "expo", "cross-platform"],
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "vanilla-js",
+      "name": "Vanilla JavaScript",
+      "description": "Simple HTML/CSS/JavaScript project without frameworks",
+      "language": "javascript",
+      "framework": "vanilla",
+      "tags": ["frontend", "html", "css", "javascript"],
+      "difficulty": "beginner"
+    }
+  ]
+}
