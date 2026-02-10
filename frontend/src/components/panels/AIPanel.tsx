@@ -8,24 +8,24 @@ const AIPanel: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState('');
   const [context, setContext] = useState('javascript');
-  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!prompt.trim()) {
       toast.error('Please enter a prompt');
       return;
     }
-    
+
     setLoading(true);
-    
+
     try {
       const result = await api.getAISuggestion({
         prompt,
         context: 'Generate code based on prompt',
         language: context,
       });
-      
+
       setResponse(result);
       toast.success('AI suggestion generated!');
     } catch (error) {
@@ -35,7 +35,7 @@ const AIPanel: React.FC = () => {
       setLoading(false);
     }
   };
-  
+
   const handleLoadModel = async () => {
     try {
       const success = await api.loadAIModel('./resources/ai-models/codellama-7b-q4.gguf');
@@ -48,7 +48,7 @@ const AIPanel: React.FC = () => {
       toast.error('Error loading AI model');
     }
   };
-  
+
   return (
     <div className="h-full flex flex-col bg-gray-900">
       {/* Header */}
@@ -61,7 +61,7 @@ const AIPanel: React.FC = () => {
               <p className="text-sm text-gray-400">Get code suggestions and fixes</p>
             </div>
           </div>
-          
+
           <div className="flex items-center space-x-2">
             <button
               onClick={handleLoadModel}
@@ -75,7 +75,7 @@ const AIPanel: React.FC = () => {
             </button>
           </div>
         </div>
-        
+
         {/* Status */}
         <div className="mt-4 flex items-center space-x-4">
           <div className="flex items-center space-x-2">
@@ -90,14 +90,14 @@ const AIPanel: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Content */}
       <div className="flex-1 overflow-hidden flex">
         {/* Input Section */}
         <div className="w-1/2 border-r border-gray-800 p-4 flex flex-col">
           <div className="flex-1">
             <h3 className="text-sm font-medium text-gray-300 mb-2">What do you need?</h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm text-gray-400 mb-2">Language Context</label>
@@ -115,7 +115,7 @@ const AIPanel: React.FC = () => {
                   <option value="cpp">C++</option>
                 </select>
               </div>
-              
+
               <div>
                 <label className="block text-sm text-gray-400 mb-2">Prompt</label>
                 <textarea
@@ -126,7 +126,7 @@ const AIPanel: React.FC = () => {
                   disabled={loading}
                 />
               </div>
-              
+
               <div className="flex space-x-3">
                 <button
                   type="submit"
@@ -136,7 +136,7 @@ const AIPanel: React.FC = () => {
                   <FiSend className="w-4 h-4" />
                   <span>{loading ? 'Generating...' : 'Generate Code'}</span>
                 </button>
-                
+
                 <button
                   type="button"
                   onClick={() => setPrompt('Create a React component that...')}
@@ -146,7 +146,7 @@ const AIPanel: React.FC = () => {
                 </button>
               </div>
             </form>
-            
+
             {/* Quick Prompts */}
             <div className="mt-6">
               <h4 className="text-sm font-medium text-gray-300 mb-2">Quick Prompts</h4>
@@ -170,7 +170,7 @@ const AIPanel: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Output Section */}
         <div className="w-1/2 p-4 flex flex-col">
           <div className="flex items-center justify-between mb-4">
@@ -183,7 +183,7 @@ const AIPanel: React.FC = () => {
               Copy
             </button>
           </div>
-          
+
           <div className="flex-1 bg-gray-950 rounded-lg p-4 overflow-auto">
             {response ? (
               <pre className="text-sm text-gray-300 whitespace-pre-wrap font-mono">
@@ -199,7 +199,7 @@ const AIPanel: React.FC = () => {
               </div>
             )}
           </div>
-          
+
           {/* Stats */}
           {response && (
             <div className="mt-4 pt-4 border-t border-gray-800">

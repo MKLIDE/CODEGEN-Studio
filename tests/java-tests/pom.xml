@@ -6,19 +6,22 @@
     <modelVersion>4.0.0</modelVersion>
     
     <parent>
-        <groupId>com.codegen</groupId>
-        <artifactId>codegen-backend</artifactId>
-        <version>1.0.0</version>
-        <relativePath>../../java-backend/pom.xml</relativePath>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.5</version>
+        <relativePath/>
     </parent>
     
+    <groupId>com.codegen</groupId>
     <artifactId>codegen-backend-tests</artifactId>
+    <version>1.0.0</version>
     <name>CodeGen Backend Tests</name>
     <description>Unit and integration tests for CodeGen backend</description>
     
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
     <dependencies>
