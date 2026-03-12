@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODEGEN-Studio — Private, Local-First Code Generation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">CODEGEN</span>
+                <span class="logo-bracket">}</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#docs">Documentation</a>
+                <a href="#download" class="nav-cta">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">PRIVATE • LOCAL • SECURE</div>
+                <h1 class="hero-title">
+                    Code generation that
+                    <span class="gradient-text">never leaves your machine</span>
+                </h1>
+                <p class="hero-subtitle">
+                    CODEGEN-Studio is a local-first development environment with AI assistance that runs entirely on your computer. 
+                    Your code, your data, your control.
+                </p>
+                <div class="hero-cta">
+                    <a href="#download" class="btn btn-primary">Download for Desktop</a>
+                    <a href="#docs" class="btn btn-secondary">View Documentation</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Private</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Cloud Calls</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">∞</span>
+                        <span class="stat-label">Local Control</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Banner -->
+    <section class="trust-banner">
+        <div class="container">
+            <p>Trusted by developers who value privacy</p>
+            <div class="trust-logos">
+                <span>Rust</span>
+                <span>React</span>
+                <span>Spring Boot</span>
+                <span>TypeScript</span>
+                <span>Node.js</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built for privacy-first development</h2>
+                <p>Everything runs locally. No cloud, no telemetry, no exceptions.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy by Design</h3>
+                    <p>Your code never leaves your machine. All processing happens locally with no network calls by default.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Local AI Engine</h3>
+                    <p>Powered by llama.cpp, providing intelligent code suggestions without any cloud dependencies.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Project Templates</h3>
+                    <p>Start with production-ready setups for React, Node.js, Spring Boot, and Rust applications.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Security First</h3>
+                    <p>Encrypted storage, network blocking by default, and zero telemetry or analytics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Multi-Language</h3>
+                    <p>Full support for Rust, React, TypeScript, Java, Node.js, and Python with language-specific optimizations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>One-Click Operations</h3>
+                    <p>Run, test, build, and export your projects with a single click—no configuration needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2>Local-first architecture</h2>
+                <p>Three layers, one mission: keeping your code private.</p>
+            </div>
+            <div class="architecture-grid">
+                <div class="arch-card">
+                    <div class="arch-layer">Frontend Layer</div>
+                    <h4>React + TypeScript + Vite</h4>
+                    <p>Modern, responsive UI that communicates only with local processes. Zero external API calls.</p>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-layer">Desktop Shell</div>
+                    <h4>Tauri (Rust)</h4>
+                    <p>Lightweight, secure bridge between UI and system. No telemetry, no background phoning home.</p>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-layer">Business Logic</div>
+                    <h4>Java Spring Boot (Embedded)</h4>
+                    <p>Local server process that runs entirely on your machine. All models and data stay local.</p>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-layer">AI Engine</div>
+                    <h4>llama.cpp + Local Models</h4>
+                    <p>Inference runs on your hardware. Download models once, use them forever—offline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Guarantee -->
+    <section class="privacy-guarantee">
+        <div class="container">
+            <div class="guarantee-content">
+                <h2>Your code is sacred.<br>We mean it.</h2>
+                <div class="guarantee-grid">
+                    <div class="guarantee-item">
+                        <span class="check">✓</span>
+                        <span>No network calls by default</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="check">✓</span>
+                        <span>All AI processing local</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="check">✓</span>
+                        <span>Encrypted file storage</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="check">✓</span>
+                        <span>No telemetry or analytics</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="check">✓</span>
+                        <span>Your code never leaves your computer</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="check">✓</span>
+                        <span>Open source and auditable</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-card">
+                <h2>Get started today</h2>
+                <p>Download CODEGEN-Studio for your platform. No signup, no cloud account, no data collection.</p>
+                <div class="download-buttons">
+                    <a href="#" class="btn-download">
+                        <span class="platform-icon">🪟</span>
+                        <span class="platform-name">Windows</span>
+                        <span class="platform-desc">.exe installer</span>
+                    </a>
+                    <a href="#" class="btn-download">
+                        <span class="platform-icon">🍎</span>
+                        <span class="platform-name">macOS</span>
+                        <span class="platform-desc">.dmg (Apple Silicon & Intel)</span>
+                    </a>
+                    <a href="#" class="btn-download">
+                        <span class="platform-icon">🐧</span>
+                        <span class="platform-name">Linux</span>
+                        <span class="platform-desc">.AppImage • .deb</span>
+                    </a>
+                </div>
+                <div class="download-note">
+                    All downloads are signed and verified. SHA256 checksums available.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Preview -->
+    <section id="docs" class="docs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple, clear documentation</h2>
+                <p>Get started in minutes with our comprehensive guides.</p>
+            </div>
+            <div class="docs-grid">
+                <a href="#" class="doc-card">
+                    <h4>Quick Start</h4>
+                    <p>Install and run your first project in 5 minutes</p>
+                    <span class="doc-link">Read guide →</span>
+                </a>
+                <a href="#" class="doc-card">
+                    <h4>Architecture Overview</h4>
+                    <p>Understand how CODEGEN-Studio keeps your code private</p>
+                    <span class="doc-link">Read guide →</span>
+                </a>
+                <a href="#" class="doc-card">
+                    <h4>Local AI Setup</h4>
+                    <p>Configure and optimize local models for your hardware</p>
+                    <span class="doc-link">Read guide →</span>
+                </a>
+                <a href="#" class="doc-card">
+                    <h4>Project Templates</h4>
+                    <p>Create new projects from production-ready templates</p>
+                    <span class="doc-link">Read guide →</span>
+                </a>
+                <a href="#" class="doc-card">
+                    <h4>API Reference</h4>
+                    <p>Complete documentation of local APIs and extensions</p>
+                    <span class="doc-link">Read guide →</span>
+                </a>
+                <a href="#" class="doc-card">
+                    <h4>Security & Privacy</h4>
+                    <p>Deep dive into our security model and guarantees</p>
+                    <span class="doc-link">Read guide →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">{</span>
+                    <span class="logo-text">CODEGEN</span>
+                    <span class="logo-bracket">}</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>Product</h5>
+                        <a href="#features">Features</a>
+                        <a href="#architecture">Architecture</a>
+                        <a href="#download">Download</a>
+                        <a href="#">Release Notes</a>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Resources</h5>
+                        <a href="#docs">Documentation</a>
+                        <a href="#">GitHub</a>
+                        <a href="#">Contributing</a>
+                        <a href="#">License (MIT)</a>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Legal</h5>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 CODEGEN-Studio. Open source under MIT License.</p>
+                <p class="footer-tagline">Your code stays yours. Always.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+                  </html>
